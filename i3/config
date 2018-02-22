@@ -100,6 +100,7 @@ bindsym $mod+a workspace a:
 bindsym $mod+s workspace s:s
 bindsym $mod+d workspace d:d
 bindsym $mod+f workspace f:f
+bindsym $mod+e workspace e:
 
 bindsym $mod+1 workspace 1:
 bindsym $mod+2 workspace 2:
@@ -119,8 +120,9 @@ bindsym $mod+Shift+3 move container to workspace 3:
 bindsym $mod+Shift+5 move container to workspace 5:
 bindsym $mod+Shift+a move container to workspace a:
 bindsym $mod+Shift+s move container to workspace s:s
-bindsym $mod+Shift+d move container to workspace d:s
-bindsym $mod+Shift+f move container to workspace f:s
+bindsym $mod+Shift+d move container to workspace d:d
+bindsym $mod+Shift+f move container to workspace f:f
+bindsym $mod+Shift+e move container to workspace e:
 #bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
@@ -189,6 +191,7 @@ for_window [class="Thunderbird"] move to workspace 2:
 for_window [class="Emacs"] move to workspace a:
 for_window [class="KeePass2"] move to workspace 5:
 for_window [class="keepassxc"] move to workspace 5:
+for_window [class="jetbrains-pycharm"] move to workspace e:
 #for_window [name="Fig.*"] move to workspace 3:
 
 ####################
