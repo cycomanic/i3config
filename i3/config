@@ -10,6 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 exec --no-startup-id autorandr -c --force
+set $x_switch exec --no-startup-id ~/.i3/i3-wk-switch/i3-wk-switch.py
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -31,7 +32,8 @@ font pango:monospace 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+#bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+c kill
@@ -99,24 +101,48 @@ bindsym $mod+p focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+a workspace a:
-bindsym $mod+s workspace s:s
-bindsym $mod+d workspace d:d
-bindsym $mod+f workspace f:f
-bindsym $mod+e workspace e:
+#bindsym $mod+a workspace a:
+#bindsym $mod+s workspace s:s
+#bindsym $mod+d workspace d:d
+#bindsym $mod+f workspace f:f
+#bindsym $mod+e workspace e:
 
-bindsym $mod+1 workspace 1:
-bindsym $mod+2 workspace 2:
-bindsym $mod+5 workspace 5:
-bindsym $mod+3 workspace 3:
-bindsym $mod+8 workspace 8:
+#workspace a: output DP-2-1
+workspace s:s output DP-2-2
+workspace d:d output DP-2-1
+#workspace f:f output DP-2-1
+#workspace e: output DP-2-1
+
+bindsym $mod+a $x_switch a:
+bindsym $mod+s $x_switch s:s
+bindsym $mod+d $x_switch d:d
+bindsym $mod+f $x_switch f:f
+bindsym $mod+e $x_switch e:
+
+#bindsym $mod+1 workspace 1:
+#bindsym $mod+2 workspace 2:
+#bindsym $mod+5 workspace 5:
+#bindsym $mod+3 workspace 3:
+#bindsym $mod+8 workspace 8:
 #bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+#bindsym $mod+6 workspace 6
+#bindsym $mod+7 workspace 7
+#bindsym $mod+9 workspace 9
+#bindsym $mod+0 workspace 10
 
-# move focused container to workspace
+
+bindsym $mod+1 $x_switch 1:
+bindsym $mod+2 $x_switch 2:
+bindsym $mod+5 $x_switch 5:
+bindsym $mod+3 $x_switch 3:
+bindsym $mod+8 $x_switch 8:
+#bindsym $mod+5 $x_switch 5
+bindsym $mod+6 $x_switch 6
+bindsym $mod+7 $x_switch 7
+bindsym $mod+9 $x_switch 9
+bindsym $mod+0 $x_switch 10
+
+# move focused container to $x_switch
 bindsym $mod+Shift+1 move container to workspace 1:
 bindsym $mod+Shift+2 move container to workspace 2:
 bindsym $mod+Shift+3 move container to workspace 3:
